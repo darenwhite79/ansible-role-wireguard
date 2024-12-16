@@ -15,8 +15,11 @@ Address = {{ wg_addr }}
 {%  endfor %}
 {% endif %}
 PrivateKey = {{ wireguard_private_key }}
-{% if wireguard_endpoint is defined and wireguard_endpoint != "" %}
+{% if wireguard_port is defined and wireguard_port != "" %}
 ListenPort = {{ wireguard_port }}
+{% endif %}
+{% if wireguard_endpoint is defined and wireguard_endpoint != "" %}
+Endpoint = {{ wireguard_endpoint }}
 {% endif %}
 {% if wireguard_dns is defined %}
 DNS = {{ wireguard_dns }}
